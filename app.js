@@ -35,6 +35,36 @@ app.get('/api/datos2', async (req, res) => {
     res.status(500).json({ error: 'Error al obtener datos' });
   }
 });
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Inicio</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f2f2f2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+        }
+        h1 {
+          color: #333;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>✅ Servidor funcionando correctamente</h1>
+    </body>
+    </html>
+  `);
+});
+
 
 async function startServer() {
   try {
